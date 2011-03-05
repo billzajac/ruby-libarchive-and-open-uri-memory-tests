@@ -1,0 +1,28 @@
+h1. Ruby libarchive and open-uri memory tests
+
+Ruby's libarchive and open-uri gems can use a ton of memory if you're not careful. 
+This repo is a just number of test scripts I used to explore various use cases.
+
+h2. Use Case
+When creating scripts for something like "Chef":http://wiki.opscode.com/display/chef/Home, you might need to download a large tarball.  If you're not careful, the process of downloading and potentially extracting that tarball could end up trying to use more memory than your system has.
+
+h2. Observations
+The main observation seems to be that if you open the file handles for writing inside of the read loop, that you will end up storing the entire file in memory at some point.  This seems obvious now that I've seen it, but my initial expectation was exactly the opposite.
+
+It's also worth noting that libarchive allows you to chunk your data read, which it doesn't do by default.  If you don't send a parameter to Archive#read_data() it will store the entire file in memory at some point.
+
+h2. The scripts
+* wget_best.rb
+* profile_tools.rb is a library
+** The very simple ProfileTools class has the method show_mem() which finds the RSS using ps $$
+
+h2. Links
+* https://bitbucket.org/winebarrel/libarchive-ruby/src
+* http://code.google.com/p/libarchive/wiki/Examples
+* http://www.ruby-doc.org/stdlib/libdoc/open-uri/rdoc/index.html
+
+h2. To do
+Read more at: http://code.google.com/p/libarchive/wiki/Examples
+* In glancing at the Examples, it looks like libarchive was created to allow for chaining.
+
+
