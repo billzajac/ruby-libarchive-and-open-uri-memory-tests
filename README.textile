@@ -21,13 +21,13 @@ h2. The scripts
 
 h2. Links
 
-* https://bitbucket.org/winebarrel/libarchive-ruby/src
-* http://code.google.com/p/libarchive/wiki/Examples
-* http://www.ruby-doc.org/stdlib/libdoc/open-uri/rdoc/index.html
+* "https://bitbucket.org/winebarrel/libarchive-ruby/src":https://bitbucket.org/winebarrel/libarchive-ruby/src
+* "http://code.google.com/p/libarchive/wiki/Examples":http://code.google.com/p/libarchive/wiki/Examples
+* "http://www.ruby-doc.org/stdlib/libdoc/open-uri/rdoc/index.html":http://www.ruby-doc.org/stdlib/libdoc/open-uri/rdoc/index.html
 
 h2. To do
 
-Read more at: http://code.google.com/p/libarchive/wiki/Examples
+Read more at: "http://code.google.com/p/libarchive/wiki/Examples":http://code.google.com/p/libarchive/wiki/Examples
 * In glancing at the Examples, it looks like libarchive was created to allow for chaining.
 
 
